@@ -5,7 +5,6 @@ require('dotenv').config()
 
 async function eventsFromKM(outputFilename) {
 
-    console.log("process env", process.env)
     const baseUrl = process.env.BASEURL;
     const res = await axios.get(baseUrl);
     const data = res.data;
