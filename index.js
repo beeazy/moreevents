@@ -27,6 +27,9 @@ async function eventsFromKM(outputFilename) {
       $page('div > ul > li').each((index, el) => {
         const $anchor = $page(el);
         const date = $anchor.find('.events-date').text();
+
+         //for each item navigate to url, get the data and append to the item
+         // TODO
         const posterTUrl = process.env.URL + $anchor.find('.events-poster > a').attr('href');
   
         const posterThumb = process.env.URL + $anchor.find('.events-poster > a > img').attr('src');
