@@ -1,13 +1,12 @@
+---
 name: Warmup Service
-
 on:
   schedule:
     - cron: "*/15 * * * *"
-
 jobs:
-  warmup:
+  run-updater:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Send Warmup Request
-        run: curl -s https://tappaevents.onrender.com/events > /dev/null
+      - name: REST API with curl
+        run: |
+          curl -X GET "https://tappaevents.onrender.com/events"
