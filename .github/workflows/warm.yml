@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: REST API with curl
         run: |
-          curl -s "https://tappaevents.onrender.com/events"
+          curl -X GET "https://tappaevents.onrender.com/events"
