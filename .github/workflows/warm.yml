@@ -1,0 +1,13 @@
+name: Warmup Service
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+
+jobs:
+  warmup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Warmup Request
+        run: curl -s https://tappaevents.onrender.com/events > /dev/null
