@@ -2,7 +2,7 @@
 name: Warmup Service
 on:
   schedule:
-    - cron: "*/12 * * * *"
+    - cron: '*/10 * * * *'
 jobs:
   run-updater:
     runs-on: ubuntu-latest
