@@ -1,18 +1,11 @@
----
 name: Warmup Service
 on:
   schedule:
-    - cron: '*/12 * * * *'
+    - cron: '*/14 * * * *'
 jobs:
   run-updater:
     runs-on: ubuntu-latest
     steps:
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          key: dependencies
-          path: ~/.cache/tappaevents
-      - name: Run curl
-        uses: actions/setup-curl@v1
-        with:
-          args: "-X GET https://tappaevents.onrender.com/events"
+      - name: REST API with curl
+        run: |
+          curl -X GET "https://tappaevents.onrender.com/events"
